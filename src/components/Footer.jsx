@@ -60,7 +60,7 @@ function Footer() {
           <ul class="opening-time">
             <li><span><i class="fa fa-times"></i></span><p class="clock-time"><strong>monday :</strong> closed</p>
              </li>
-            <li><span><i class="fa fa-check"></i></span><p><strong>tue-fri :</strong> 8am - 12am</p></li>
+            <li><span><i class="fa fa-check"></i></span><p><strong>tue-Fri :</strong> 8am - 12am</p></li>
             <li><span><i class="fa fa-check"></i></span><p><strong>sat-sun :</strong> 7am - 1am</p></li>
             <li><span><i class="fa fa-check"></i></span><p><strong>holydays :</strong> 12pm-12am</p></li>
           </ul>
