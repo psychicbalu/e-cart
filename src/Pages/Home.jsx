@@ -1,33 +1,45 @@
-import React from 'react'
+import React from 'react';
 import { Col, Row } from 'react-bootstrap';
-
+import useFetch from '../Hooks/usefetch';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 function Home() {
+  const data = useFetch('https://dummyjson.com/products');
+  console.log(data);
+
   return (
     <div>
-       <Row>
-        <Col>
-        <Card style={{ width: '18rem' }}>
-      <Card.Img variant="top" src="https://th.bing.com/th/id/OIP.s2PlroYvMDnibPbak78SQgHaEc?w=311&h=187&c=7&r=0&o=5&dpr=1.3&pid=1.7" />
-      <Card.Body>
-        <Card.Title>Card Title</Card.Title>
-        <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text>
-       <div className='d-flex  justify-content-between'>
-       <Button className='btn ' ><i class="fa-solid fa-heart" style={{color: '#d22014'}}></i> </Button>
-        <Button className=' btn '><i class="fa-solid fa-cart-shopping" style={{color: '#eb1405'}}></i> </Button>
+      <Row className='m-1 '>
+        {data ? (
+          data.map((item) => (
+            <Col key={item.id}>
+              <Card  style={{ width: '18rem',height:"30rem"  }}>
+                <Card.Img variant="top" style={{height:"50%"}} src={item.thumbnail} />
+                <Card.Body>
+                  <Card.Title>{item.title}</Card.Title>
+                  <Card.Text>
+                   {item.description.slice(1, -3) + '...'}
+                  </Card.Text>
+                  <Card.Text style={{color:'red'}}>
+                   {item.price} $
+                  </Card.Text>
+                  <div className='d-flex justify-content-between'>
+                    <Button  className='btn '><i className="fa-solid fa-heart" style={{ color: '#fcba03' }}></i> </Button>
+                    <Button className='btn'><i className="fa-solid fa-cart-shopping" style={{ color: '#eb1405' }}></i> </Button>
+                  </div>
+                  
+                </Card.Body>
 
-       </div>
-      </Card.Body>
-    </Card>
-        </Col>
+              </Card>
+            </Col>
+          ))
+        ) : (
+          <h1>Loading...</h1>
+        )}
       </Row>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;

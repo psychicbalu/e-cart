@@ -12,7 +12,7 @@ function Header() {
       };
 
   return (
-    <Navbar collapseOnSelect expand="lg" className="bg-body-tertiary">
+    <Navbar style={{zIndex:'1', position:'sticky' }}  className="bg-body-tertiary">
       <Container>
         <Navbar.Brand > <Nav.Link><Link onClick={handleClick}  to={'/'} style={{textDecoration: 'none' }}> <i class="fa-solid fa-truck fa-bounce"></i> E-Cart </Link>    </Nav.Link>  </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
