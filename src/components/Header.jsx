@@ -1,31 +1,64 @@
-import React, { useState } from 'react'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import { Link } from 'react-router-dom';
+import React from "react"
+import { Link } from "react-router-dom"
 import Badge from 'react-bootstrap/Badge';
-function Header() {
-    
-    const [cartItems, setCartItems] = useState(0);
-    const handleClick = () => {
-        setCartItems(cartItems + 1);
-      };
+import Button from 'react-bootstrap/Button';
+import { useSelector } from "react-redux";
+import wishlistslice from "../redux/slice/wishlistslice";
 
+
+function Header() {
+  const wishlist =useSelector((state)=>state.wishlistReducer)
   return (
-    <Navbar style={{zIndex:'1', position:'sticky' }}  className="bg-body-tertiary">
-      <Container>
-        <Navbar.Brand > <Nav.Link><Link onClick={handleClick}  to={'/'} style={{textDecoration: 'none' }}> <i class="fa-solid fa-truck fa-bounce"></i> E-Cart </Link>    </Nav.Link>  </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto">
-            <Nav.Link > <Link to={'/cart'} style={{textDecoration: 'none' }}  >Cart <Badge bg="warning">{cartItems}</Badge> </Link> </Nav.Link>
-            <Nav.Link > <Link to={'/wishlist'} style={{textDecoration: 'none' }}  > WishList <Badge bg="danger">9</Badge> </Link> </Nav.Link>
-            
-          </Nav>
-          
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <nav style={{zIndex:"1"}} class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+            <Link to={'/'} style={{textDecoration:'none'}}>E-Cart</Link>
+          </a>
+          <img src="https://static.vecteezy.com/system/resources/previews/000/437/110/original/vector-add-to-cart-vector-icon.jpg" alt="" height={50} width={50} />
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor04" aria-controls="navbarColor04" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarColor04">
+            <ul class="navbar-nav me-auto">
+              {/* <li class="nav-item">
+                <a class="nav-link active" href="#">
+                  Home
+                  <span class="visually-hidden">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">
+                  Features
+                </a>
+              </li> */}
+        
+              <li class="nav-item ">
+                <Link class="nav-link" to={'/wishlist'}>
+                <i class="fa-solid fa-heart fa-beat"></i>Wishlist
+                <Badge bg="secondary">{wishlist.length}</Badge>
+                </Link>
+              </li>
+
+
+              <li class="nav-item">
+                <Link class="nav-link" to={'/cart'}>
+                <i class="fa-solid fa-cart-shopping fa-beat"></i>Cart
+                <Badge bg="secondary">0</Badge>
+                </Link>
+              </li>
+           
+            </ul>
+
+            <form class="d-flex">
+        <input class="form-control me-sm-2" type="search" placeholder="Search"/>
+        <button className="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+      </form>
+         
+          </div>
+        </div>
+      </nav>
+    </>
   )
 }
 

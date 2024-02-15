@@ -17,11 +17,11 @@ function Footer() {
             <a href="tel:0121234" class="contact-link">(123) 456-789</a>
             <div class="footer-social">
             <ul>
-              <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-              <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-              <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-              <li><a href="#"><i class="fa fa-youtube"></i></a></li>
-              <li><a href="#"><i class="fa fa-rss"></i></a></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
             </ul>
               </div>
           </div>
@@ -33,19 +33,19 @@ function Footer() {
         <div class="footer-widget-content">
           <div class="media">
               <div class="media-left">
-                 <a href="#"></a>
+               
               </div>
               <div class="media-body">
-                 <p><a href="#">vulputate velit esse consequat. </a></p>
+                 <p></p>
                  <span>September 30, 2024 </span>
               </div>
            </div>
           <div class="media">
               <div class="media-left">
-                 <a href="#."></a>
+                
               </div>
               <div class="media-body">
-                 <p><a href="#">vulputate velit esse consequat. </a></p>
+                 <p></p>
                  <span>September 30, 2024 </span>
               </div>
            </div>
@@ -74,12 +74,12 @@ function Footer() {
                         <div class="footer-widget-content">
                             <div class="images-gellary">
                             <ul>
-                                    <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 01" /></a></li>
-                                    <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 02" /></a></li>
-                                    <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 03" /></a></li>
-                                    <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 04" /></a></li>
-                                    <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 05" /></a></li>
-                                    <li><a href="#"><img src="http://placehold.it/85x85" alt="Instagram 06" /></a></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
                                 </ul>
                             </div>
                         </div>
