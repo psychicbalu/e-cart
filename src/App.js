@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
-import Footer from './Components/Footer';
-import Header from './Components/Header';
+import Footer from './Components/Footer.jsx';
+import Header from './Components/Header.jsx';
 import Cart from './Pages/Cart';
 import Home from './Pages/Home';
 import WishList from './Pages/WishList';
