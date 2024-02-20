@@ -1,12 +1,19 @@
 import React from 'react'
 import { Button, Card, Col, Row } from 'react-bootstrap'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { addTowishlist } from '../redux/slice/wishlistslice'
+import { addTowishlist, removefromwishlist } from '../redux/slice/wishlistslice'
+import { addtocart } from '../redux/slice/Cartslice'
+
 
 
 function WishList() {
-  const wishlistArray=useSelector((state)=>state.wishlistReducer)
+  const wishlistArray=useSelector((state)=>state.wishlistreducer)
+  const dispatch=useDispatch()
+  const handlewishlistcart= (products)=>{
+    dispatch(addtocart(products))
+    dispatch(removefromwishlist(products.id))
+  }
   return (
     <div>
       <Row>
@@ -21,10 +28,10 @@ function WishList() {
                 <Card.Text>{products?.description.slice(0,50)}</Card.Text>
     
                 <div className="d-flex justify-content-between ">
-                  <Button  variant="danger">
-                    <i class="fa-solid fa-heart"></i>
+                  <Button onClick={()=>dispatch(removefromwishlist(products.id))}  variant="danger">
+                    <i class="fa-solid fa-trash"></i>
                   </Button>
-                  <Button variant="success">
+                  <Button onClick={()=>handlewishlistcart(products)} variant="success">
                     <i class="fa-solid fa-cart-shopping"></i>
                   </Button>
                 </div>

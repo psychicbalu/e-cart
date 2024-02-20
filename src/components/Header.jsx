@@ -7,7 +7,8 @@ import wishlistslice from "../redux/slice/wishlistslice";
 
 
 function Header() {
-  const wishlist =useSelector((state)=>state.wishlistReducer)
+  const wishlist =useSelector((state)=>state.wishlistreducer)
+  const cart=useSelector((state)=>state.cartreducer)
   return (
     <>
       <nav style={{zIndex:"1"}} class="navbar navbar-expand-lg bg-body-tertiary">
@@ -44,7 +45,7 @@ function Header() {
               <li class="nav-item">
                 <Link class="nav-link" to={'/cart'}>
                 <i class="fa-solid fa-cart-shopping fa-beat"></i>Cart
-                <Badge bg="secondary">0</Badge>
+                <Badge bg="secondary">{cart.length}</Badge>
                 </Link>
               </li>
            

@@ -1,96 +1,122 @@
 import React from 'react'
-import './footer.css'
+import { MDBFooter, MDBContainer, MDBIcon, MDBInput, MDBCol, MDBRow, MDBBtn } from "mdb-react-ui-kit"
+import { Link } from "react-router-dom"
 
 function Footer() {
   return (
     <div>
+      <MDBFooter className="text-center" color="black" bgColor="light">
+        <MDBContainer className="p-4">
+          <section className="">
+            <MDBRow>
+              <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+                <h5 className="text-uppercase">
+                  <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+                    <i className="fa-solid fa-play fa-beat-fade me-2"></i>
+                    E-CART
+                  </Link>
+                </h5>
 
-<footer class="footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-3">
-        <div class="footer-widget">
-          <h3>Stay in touch</h3>
-          <div class="footer-widget-content">
-            <a href="mailto:sales@example.com" class="contact-link">sales@example.com</a>
-            <a href="mailto:support@example.com" class="contact-link red"> support@example.com </a>
-            <a href="tel:0121234" class="contact-link">(123) 456-789</a>
-            <div class="footer-social">
-            <ul>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-              <li></li>
-            </ul>
-              </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-      <div class="footer-widget">
-        <h3>Latest Events</h3>
-        <div class="footer-widget-content">
-          <div class="media">
-              <div class="media-left">
-               
-              </div>
-              <div class="media-body">
-                 <p></p>
-                 <span>September 30, 2024 </span>
-              </div>
-           </div>
-          <div class="media">
-              <div class="media-left">
-                
-              </div>
-              <div class="media-body">
-                 <p></p>
-                 <span>September 30, 2024 </span>
-              </div>
-           </div>
-        </div>
-        </div>
-      </div>
-      <div class="col-sm-3">
-      <div class="footer-widget">
-        <h3>Opening Hour</h3>
-        <div class="footer-widget-content">
-        <div class="open-time ">
-          <ul class="opening-time">
-            <li><span><i class="fa fa-times"></i></span><p class="clock-time"><strong>monday :</strong> closed</p>
-             </li>
-            <li><span><i class="fa fa-check"></i></span><p><strong>tue-Fri :</strong> 8am - 12am</p></li>
-            <li><span><i class="fa fa-check"></i></span><p><strong>sat-sun :</strong> 7am - 1am</p></li>
-            <li><span><i class="fa fa-check"></i></span><p><strong>holydays :</strong> 12pm-12am</p></li>
-          </ul>
-           </div>
-        </div>
-        </div></div>
-      
-      <div class="col-sm-3">
-      <div class="footer-widget">
-        <h3>Contact Us</h3>
-                        <div class="footer-widget-content">
-                            <div class="images-gellary">
-                            <ul>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                    <li></li>
-                                </ul>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </footer>
+                <br />
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <h6 href="#!" className="text-black" style={{ textAlign: "left" }}>
+                      Lorem, ipsum dolor aerat in hic illum voluptates cupiditate aperiam natus, molestiae pariatur labore, magnam itaque atque vero, totam ut!
+                    </h6>
+                  </li>
+                </ul>
+              </MDBCol>
 
+              <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+                <h5 className="text-uppercase">Links</h5>
+                <br />
 
-                </div>
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <Link to={"/wishlist"} style={{ textDecoration: "none", color: "black" }}>
+                      WishList
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={"/cart"} style={{ textDecoration: "none", color: "black" }}>
+                      cart
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to={"/"} style={{ textDecoration: "none", color: "black" }}>
+                      Home page
+                    </Link>
+                  </li>
+                </ul>
+              </MDBCol>
+
+              <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+                <h5 className="text-uppercase">Guides</h5>
+                <br />
+
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <a href="#!" className="text-black" style={{ textDecoration: "none" }}>
+                      React
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-black" style={{ textDecoration: "none" }}>
+                      React Bootstrap
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#!" className="text-black" style={{ textDecoration: "none" }}>
+                      Bootswatch
+                    </a>
+                  </li>
+                </ul>
+              </MDBCol>
+
+              <MDBCol lg="3" md="6" className="mb-4 mb-md-0">
+                <h5 className="text-uppercase">Contact Us</h5>
+                <br />
+
+                <ul className="list-unstyled mb-0">
+                  <li>
+                    <input type="email" placeholder="Email id" style={{ height: "45px", borderRadius: "10px", border: "1px solid black" }} />
+                    &nbsp;
+                    <button style={{ height: "45px", backgroundColor: "yellow", color: "black", borderRadius: "10px", border: "none" }}>subscribe</button>
+                  </li>
+                  <br />
+                  <li>
+                    <a href="#!" className="text-black">
+                      <MDBBtn outline color="dark" floating className="m-1" href="#!" role="button">
+                        <MDBIcon fab icon="twitter" />
+                      </MDBBtn>
+
+                      <MDBBtn outline color="dark" floating className="m-1" href="#!" role="button">
+                        <MDBIcon fab icon="instagram" />
+                      </MDBBtn>
+
+                      <MDBBtn outline color="dark" floating className="m-1" href="#!" role="button">
+                        <MDBIcon fab icon="linkedin-in" />
+                      </MDBBtn>
+
+                      <MDBBtn outline color="dark" floating className="m-1" href="#!" role="button">
+                        <MDBIcon fab icon="facebook-f" />
+                      </MDBBtn>
+                    </a>
+                  </li>
+                </ul>
+              </MDBCol>
+            </MDBRow>
+          </section>
+        </MDBContainer>
+
+        <div className="text-center p-3" style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}>
+          © 2024 Copyright:
+          <a className="text-black" href="https://mdbootstrap.com/">
+            Ecart.com
+          </a>
+        </div>
+      </MDBFooter>
+    </div>
   )
 }
 

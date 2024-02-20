@@ -5,6 +5,7 @@ import Card from "react-bootstrap/Card"
 import useFetch from "../Hooks/useFetch"
 import { useDispatch } from "react-redux"
 import { addTowishlist } from "../redux/slice/wishlistslice"
+import { addtocart } from "../redux/slice/Cartslice"
 
 function Home() {
 
@@ -27,7 +28,7 @@ function Home() {
               <Button onClick={()=>dispatch(addTowishlist(products))} variant="danger">
                 <i class="fa-solid fa-heart"></i>
               </Button>
-              <Button variant="success">
+              <Button onClick={()=>dispatch(addtocart(products))} variant="success">
                 <i class="fa-solid fa-cart-shopping"></i>
               </Button>
             </div>
@@ -41,4 +42,4 @@ function Home() {
   )
 }
 
-export default Home
+export default Home
